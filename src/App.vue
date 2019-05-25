@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-toolbar v-if="isLogin">
+      <v-toolbar-title>토요스터디</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-title>
+        <v-btn icon v-if="isHome" @click="moveToAdd">
+          <v-icon>add</v-icon>
+        </v-btn>
+        <v-btn icon v-else @click="moveToHome">
+          <v-icon>close</v-icon>
+        </v-btn>
+      </v-toolbar-title>
+    </v-toolbar>
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      isLogin: true,
+      isHome: true
+    }
+  },
+  methods: {
+    moveToAdd() {
+      this.isHome = false
+      this.$router.push('/schedule')
+    },
+    moveToHome() {
+      this.isHome = true
+      this.$router.push('/')
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
