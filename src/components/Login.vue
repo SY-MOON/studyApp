@@ -1,24 +1,25 @@
 <template>
 	<v-container>
 		<v-btn 
+			block
 			:loading="loading"
       :disabled="loading"
       color="secondary"
-      @click="loader = 'loading'">
+      @click="login"
+			>
 			로그인
 		</v-btn>
 	</v-container>
 </template>
 
 <script>
+import * as firebase from 'firebase'
+
 export default {
 	data () {
 		return {
 			loader: null,
-			loading: false,
-			loading2: false,
-			loading3: false,
-			loading4: false
+			loading: false
 		}
 	},
 	watch: {
@@ -30,8 +31,30 @@ export default {
 
 			this.loader = null
 		}
+	},
+	methods: {
+		login() {
+			this.loader = 'loading'
+
+			var provider = new firebase.auth.GoogleAuthProvider()
+
+			 firebase.auth().signInWithPopup(provider)
+        .then(result => {
+          var token = result.credential.accessToken
+          var user = result.user
+					console.log('login success')
+          this.$router.push({path: '/'})
+        })
+        .catch(error => {
+          var errorCode = error.code
+          var errorMessage = error.message
+          var email = error.email
+          var credential = error.credential
+          console.log(error)
+        })
+		}
 	}
-  }
+}
 </script>
 
 <style>

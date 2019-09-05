@@ -1,0 +1,30 @@
+[debug] [2019-05-25T03:04:33.458Z] ----------------------------------------------------------------------
+[debug] [2019-05-25T03:04:33.461Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only hosting:satudy
+[debug] [2019-05-25T03:04:33.461Z] CLI Version:   6.10.0
+[debug] [2019-05-25T03:04:33.461Z] Platform:      darwin
+[debug] [2019-05-25T03:04:33.461Z] Node Version:  v10.15.3
+[debug] [2019-05-25T03:04:33.462Z] Time:          Sat May 25 2019 12:04:33 GMT+0900 (GMT+09:00)
+[debug] [2019-05-25T03:04:33.463Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-05-25T03:04:33.473Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-05-25T03:04:33.473Z] > authorizing via signed-in user
+[debug] [2019-05-25T03:04:33.473Z] [iam] checking project satudy-2c738 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-05-25T03:04:33.475Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/satudy-2c738:testIamPermissions  
+
+[debug] [2019-05-25T03:04:34.383Z] <<< HTTP RESPONSE 200
+[debug] [2019-05-25T03:04:34.385Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/satudy-2c738  
+ 
+[debug] [2019-05-25T03:04:35.234Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'satudy-2c738'...
+[info] 
+[info] i  deploying hosting
+[info] 
+[info] ✔  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/satudy-2c738/overview
+[debug] [2019-05-25T03:04:36.850Z] TypeError: Cannot read property 'deploys' of undefined
+    at /usr/local/lib/node_modules/firebase-tools/lib/deploy/index.js:88:36
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[error] 
+[error] Error: An unexpected error has occurred.
