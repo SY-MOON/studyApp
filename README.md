@@ -1,29 +1,27 @@
 # satudy-app
+매주 토요일 개발 스터디 출석체크/지각비 계산용 앱
 
-## Project setup
-```
-npm install
-```
+## 기능
+1. 출석체크
+2. 지각(또는 결석)시 시간에 따라 지각(결석)비 계산
+3. 불참 또는 지각 예정자 미리 일정 등록
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## To do
+메인
+- [지각비 결과값 계산해서 보여주기
+- [ ] 현재 시간, 참석자 UI 추가
+- [ ] 현재 참석자 user 정보(프로필사진) 가져오기
+- [ ] 출석 버튼 추가 → 클릭시 참석자에 올리기, 지각시 지각비 결과값 계산
+- [ ] 지각비 납부 완료 버튼 추가 → 클릭시 리셋
+- [ ] 일정 목록 최신순 정렬, 지난 일정 노출하지 않음
+- [ ] 일정아이템 클릭시 수정페이지로 이동(업로드한 본인만 가능하게)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+등록
+- [ ] 오늘 날짜 표기
+- [ ] 날짜와 옵션, 이유 등록시 업로드
+- [ ] 등록버튼 클릭시 파이어베이스 데이터 업로드
+- [ ] 수정버튼 클릭시 데이터 수정
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+기타
+- Vuex 적용
+- Firebase 연동
