@@ -14,27 +14,27 @@
 								show-current
 								reactive
 								full-width
-								color="blue-grey darken-1"
+								color="indigo lighten-2"
 								v-model="date" ></v-date-picker>
 							<v-layout>
 								<v-btn-toggle  
 									mandatory
-									color="blue-grey darken-2"
+									
 									v-model="option" 
 									class="mt-4">
-									<v-btn text value="결석" class="pl-3 pr-3">
-										결석
+									<v-btn tile value="결석" class="pl-3 pr-3" color="indigo lighten-2">
+										<span>결석</span>
 									</v-btn>
-									<v-btn text value="지각" class="pl-3 pr-3">
-										지각
+									<v-btn tile value="지각" class="pl-3 pr-3" color="indigo lighten-2">
+										<span>지각</span>
 									</v-btn>
-									<v-btn text value="기타" class="pl-3 pr-3">
-										기타
+									<v-btn tile value="기타" class="pl-3 pr-3" color="indigo lighten-2">
+										<span>기타</span>
 									</v-btn>
 								</v-btn-toggle>
 							</v-layout>
 							<v-text-field
-								color="blue-grey darken-2"
+								color="indigo lighten-2"
 								v-model="reason"
 								class="mt-4"
 								label="이유를 말씀해주세요"
@@ -47,8 +47,17 @@
               right
 							fab  
 							@click="saveSchedule"
-							class="teal lighten-1 white--text">
+							class="indigo darken-1 white--text">
 							<v-icon>check</v-icon>
+					</v-btn>
+					<v-btn
+              fixed
+              bottom
+              left
+							fab  
+							@click="delSchedule"
+							class="red darken-1 white--text">
+							<v-icon>delete</v-icon>
 					</v-btn>
 					<v-snackbar
 						v-model="toast"

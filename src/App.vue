@@ -2,7 +2,7 @@
   <v-app>
     <!-- <v-system-bar color="pink darken-2"></v-system-bar> -->
     <!-- Header -->
-    <v-toolbar class="teal lighten-1">
+    <v-toolbar class="indigo darken-1">
       <v-toolbar-title class="white--text"><router-link to="/"><v-icon class="white--text">code</v-icon>토요스터디</router-link></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-title>
